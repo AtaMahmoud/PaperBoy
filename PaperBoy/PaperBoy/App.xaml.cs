@@ -13,7 +13,7 @@ namespace PaperBoy
 		{
 			InitializeComponent();
 
-			MainPage = new PaperBoy.MainPage();
+			MainPage = new NavigationPage(new PaperBoy.MainPage());
 		}
 
 		protected override void OnStart ()
