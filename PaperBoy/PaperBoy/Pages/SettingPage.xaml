@@ -1,12 +1,37 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="Settings"
              x:Class="PaperBoy.Pages.SettingPage">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+    
+    <StackLayout Margin="40">
+        <Label Text="Adjust your app settings and preferences as needed." FontSize="Large"/>
+
+        <Label Text="Maxmum articles to display:"/>
+        <Slider x:Name="articleCounterSlider" Minimum="0" Maximum="20"/>
+
+        <Label Text="Enter your display name:"/>
+        <Entry x:Name="displayNameEntry"/>
+
+        <Image HeightRequest="160" Aspect="AspectFit"/>
+        
+        <Label Text="My bio:"/>
+        <Editor HeightRequest="160" x:Name="bioEditor"/>
+        
+        <Label Text="Select a default news category:"/>
+        <Picker x:Name="categoryPicker">
+            <Picker.Items>
+                <x:String>Business</x:String>
+                <x:String>Entertainment</x:String>
+                <x:String>Health</x:String>
+                <x:String>Politics</x:String>
+                <x:String>Science and Technology</x:String>
+                <x:String>Sports</x:String>
+                <x:String>World</x:String>
+            </Picker.Items>
+        </Picker>
+
+        <Button Text="Save"/>
+        
+    </StackLayout>
 </ContentPage>

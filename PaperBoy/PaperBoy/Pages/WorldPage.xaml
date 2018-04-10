@@ -2,11 +2,16 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PaperBoy.Pages.WorldPage">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+    <ListView
+        x:Name="listViewTest"
+        HasUnevenRows="True"
+        ItemsSource="{Binding}">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <!--<ImageCell DetailColor="Gray" TextColor="Black" ImageSource="{Binding ImageUrl}" Text="{Binding Title}" Detail="{Binding Description}"/>-->
+                <TextCell Text="{Binding Title}" Detail="{Binding Description}"/>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+        
+    </ListView>
 </ContentPage>

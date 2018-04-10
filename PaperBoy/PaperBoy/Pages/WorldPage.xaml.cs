@@ -16,5 +16,18 @@ namespace PaperBoy.Pages
 		{
 			InitializeComponent ();
 		}
-	}
+        protected override void OnAppearing()
+        {
+            LoadNewsAsync();
+            base.OnAppearing();
+        }
+
+        private async void LoadNewsAsync()
+        {
+            listViewTest.IsRefreshing = true;
+            var news = await Helpers.NewsHelper.GetTrendingAsync();
+            listViewTest.ItemsSource = news;
+            listViewTest.IsRefreshing = false;
+        }
+    }
 }

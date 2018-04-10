@@ -15,6 +15,20 @@ namespace PaperBoy.Pages
 		public TrendingPage ()
 		{
 			InitializeComponent ();
-		}
-	}
+            
+        }
+        protected override void OnAppearing()
+        {
+            LoadNewsAsync();
+            base.OnAppearing();
+        }
+
+        private async void LoadNewsAsync()
+        {
+            listViewTest.IsRefreshing = true;
+            var news = await Helpers.NewsHelper.GetTrendingAsync();
+            BindingContext = news;
+            listViewTest.IsRefreshing = false;
+        }
+    }
 }

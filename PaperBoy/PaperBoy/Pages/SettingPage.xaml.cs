@@ -16,5 +16,18 @@ namespace PaperBoy.Pages
 		{
 			InitializeComponent ();
 		}
-	}
+        protected override void OnAppearing()
+        {
+            //InitializaeSetting();
+            base.OnAppearing();
+        }
+        
+        //private void InitializaeSetting()
+        //{
+        //    displayNameEntry.Text = "Ata Mahmoud";
+        //    bioEditor.Text = "Egyptian Computer Scienece Student and Software Engingeer";
+        //    articleCounterSlider.Value = 10;
+        //    categoryPicker.SelectedIndex = 1;
+        //}
+    }
 }
