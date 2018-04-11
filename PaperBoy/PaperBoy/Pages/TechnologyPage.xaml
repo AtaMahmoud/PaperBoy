@@ -2,11 +2,52 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PaperBoy.Pages.TechnologyPage">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+    <ListView
+        x:Name="newsListView"
+        HasUnevenRows="True"
+        ItemsSource="{Binding}"
+        Margin="20">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <Grid Margin="5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+
+                        <!--<controls:CircleImage Margin="5"
+                                              HeightRequest="100"
+                                              WidthRequest="100"
+                                              Grid.RowSpan="2"
+                                              Source="{Binding ImageUrl}"
+                                              Grid.Column="0"
+                                              Grid.Row="0"/>-->
+                        <Image Margin="5"
+                               HeightRequest="100"
+                               WidthRequest="100"
+                               Grid.RowSpan="2"
+                               Source="{Binding ImageUrl}"
+                               Grid.Column="0"
+                               Grid.Row="0"/>
+                        <Label FontSize="Medium"
+                               Grid.Column="1"
+                               Grid.Row="0"
+                               Margin="0,5,0,0"
+                               Text="{Binding Title}"/>
+                        <Label VerticalTextAlignment="Start"
+                               VerticalOptions="Start"
+                               Grid.Column="1"
+                               Grid.Row="1"
+                               Text="{Binding Description}"/>
+                    </Grid>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+
+    </ListView>
 </ContentPage>

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using PaperBoy.Models;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -24,10 +24,10 @@ namespace PaperBoy.Pages
 
         private async void LoadNewsAsync()
         {
-            listViewTest.IsRefreshing = true;
-            var news = await Helpers.NewsHelper.GetTrendingAsync();
-            listViewTest.ItemsSource = news;
-            listViewTest.IsRefreshing = false;
+            newsListView.IsRefreshing = true;
+            var news = await Helpers.NewsHelper.GetByCategoryAsync(NewsCategoryType.World);
+            BindingContext = news;
+            newsListView.IsRefreshing = false;
         }
     }
 }

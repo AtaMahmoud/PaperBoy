@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Plugin.Connectivity;
+using Plugin.Connectivity.Abstractions;
 
 namespace PaperBoy
 {
@@ -15,6 +17,17 @@ namespace PaperBoy
 		{
 			InitializeComponent();
 		}
+
+        protected override void OnAppearing()
+        {
+            CrossConnectivity.Current.ConnectivityChanged += OnConnectivityChannged;
+            base.OnAppearing();
+        }
+
+        private void OnConnectivityChannged(object sender, ConnectivityChangedEventArgs e)
+        {
+            
+        }
 
         private async void OnSettingsClicked(object sender,EventArgs e)
         {

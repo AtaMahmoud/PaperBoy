@@ -4,7 +4,7 @@ using System.Text;
 
 namespace PaperBoy.Models
 {
-    public enum NewCategoryType
+    public enum NewsCategoryType
     {
         Business,
         Entertainment,

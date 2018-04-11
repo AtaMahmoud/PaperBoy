@@ -25,10 +25,10 @@ namespace PaperBoy.Pages
 
         private async void LoadNewsAsync()
         {
-            listViewTest.IsRefreshing = true;
+            newsListView.IsRefreshing = true;
             var news = await Helpers.NewsHelper.GetTrendingAsync();
             BindingContext = news;
-            listViewTest.IsRefreshing = false;
+            newsListView.IsRefreshing = false;
         }
     }
 }
