@@ -10,7 +10,7 @@
             <Label Style="{x:DynamicResource TitleStyle}" Text="Adjust your app settings and preferences as needed." />
 
             <Label Style="{x:DynamicResource SubtitleStyle}" Text="Maxmum articles to display:"/>
-            <Slider x:Name="articleCounterSlider" Minimum="0" Maximum="20"/>
+            <Slider x:Name="articleCounterSlider" Minimum="0" Maximum="20" />
 
             <Label Style="{x:DynamicResource SubtitleStyle}" Text="Enter your display name:"/>
             <Entry x:Name="displayNameEntry"/>

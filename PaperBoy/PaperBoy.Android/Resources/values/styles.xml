@@ -16,20 +16,27 @@
     <item name="windowActionBar">false</item>
     <!-- Set theme colors from http://www.google.com/design/spec/style/color.html#color-color-palette -->
     <!-- colorPrimary is used for the default action bar background -->
-    <item name="colorPrimary">#0059B2</item>
+    <item name="colorPrimary">@color/apptheme_color</item>
     <!-- colorPrimaryDark is used for the status bar -->
-    <item name="colorPrimaryDark">#0059B2</item>
+    <item name="colorPrimaryDark">@color/apptheme_color</item>
     <!-- colorAccent is used as the default value for colorControlActivated
          which is used to tint widgets -->
-    <item name="colorAccent">#0059B2</item>
+    <item name="colorAccent">@color/apptheme_color</item>
     <!-- You can also set colorControlNormal, colorControlActivated
          colorControlHighlight and colorSwitchThumbNormal. -->
+    <item name="android:colorActivatedHighlight">@color/list_highlight_color</item>
     <item name="windowActionModeOverlay">true</item>
-
+    <item name="android:seekBarStyle">@style/SeekBarAppTheme</item>
     <item name="android:datePickerDialogTheme">@style/AppCompatDialogStyle</item>
   </style>
-
+  
+  <style name="SeekBarAppTheme" parent="android:Widget.SeekBar">
+    <item name="android:minHeight">4dip</item>
+    <item name="android:maxHeight">4dip</item>
+    <item name="android:thumb">@drawable/slider_thumb</item>
+    <item name="android:progressDrawable">@drawable/slider_progress</item>
+  </style>
   <style name="AppCompatDialogStyle" parent="Theme.AppCompat.Light.Dialog">
-    <item name="colorAccent">#FF4081</item>
+    <item name="colorAccent">@color/apptheme_color</item>
   </style>
 </resources>
