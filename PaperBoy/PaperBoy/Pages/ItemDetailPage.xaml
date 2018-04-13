@@ -15,7 +15,7 @@
                Text="{Binding Description}"/>
         
         <Label Style="{DynamicResource ListDescriptionStyle}"
-               Text="{Binding CreatedDate,StringFormat='UPDATE: {0:dddd h:mm tt} GMT'}"/>
+               Text="{Binding CreatedDate,Converter={StaticResource AgoLabelConverter}"/>
         
     </StackLayout>
 </ContentPage>

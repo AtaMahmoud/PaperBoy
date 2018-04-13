@@ -58,7 +58,7 @@
                                FontSize="Micro" 
                                Grid.Column="1" 
                                Grid.Row="2"
-                               Text="{Binding CreatedDate,StringFormat='UPDATED:{0:dddd h:mm tt} GMT'}"/>
+                               Text="{Binding CreatedDate,Converter={StaticResource AgoLabelConverter}"/>
                     </Grid>
                 </ViewCell>
             </DataTemplate>

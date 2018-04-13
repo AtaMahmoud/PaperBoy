@@ -46,6 +46,7 @@
                                Grid.Column="1"
                                Grid.Row="0"
                                Margin="0,5,0,0"
+                               FontAttributes="{Binding Title,Converter={StaticResource LableFontWeightConverter}}"
                                Text="{Binding Title}"/>
                         <Label VerticalTextAlignment="Start"
                                Style="{DynamicResource ListDescriptionStyle}"
@@ -58,7 +59,7 @@
                                FontSize="Micro" 
                                Grid.Column="1" 
                                Grid.Row="2"
-                               Text="{Binding CreatedDate,StringFormat='UPDATED:{0:dddd h:mm tt} GMT'}"/>
+                               Text="{Binding CreatedDate,Converter={StaticResource AgoLabelConverter}"/>
                     </Grid>
                 </ViewCell>
             </DataTemplate>

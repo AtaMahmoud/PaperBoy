@@ -4,12 +4,16 @@
              xmlns:light="clr-namespace:Xamarin.Forms.Themes;assembly=Xamarin.Forms.Theme.Light"
              xmlns:dark="clr-namespace:Xamarin.Forms.Themes;assembly=Xamarin.Forms.Theme.Dark"
              xmlns:command="clr-namespace:PaperBoy.Common.Commands" 
+             xmlns:converters="clr-namespace:PaperBoy.Common.Converters"
              x:Class="PaperBoy.App">
 	<Application.Resources>
         <ResourceDictionary>
             
             <command:NavigateToSettingsCommand x:Key="NavigateToSettingsCommand"/>
             <command:RefreshNewsCommand x:Key="RefreshNewsCommand"/>
+
+            <converters:LableFontWeightConverter x:Key="LableFontWeightConverter"/>
+            <converters:AgoLabelConverter x:Key="AgoLabelConverter"/>
             
             <Color x:Key="ListTextColor">#000000</Color>
 
