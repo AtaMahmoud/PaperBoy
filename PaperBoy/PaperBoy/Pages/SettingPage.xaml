@@ -34,7 +34,7 @@
                 </Picker.Items>
             </Picker>
 
-            <Button Text="Save"/>
+            <Button Text="Save" Clicked="OnSaveClicked"/>
 
         </StackLayout>
     </ScrollView>

@@ -3,9 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:light="clr-namespace:Xamarin.Forms.Themes;assembly=Xamarin.Forms.Theme.Light"
              xmlns:dark="clr-namespace:Xamarin.Forms.Themes;assembly=Xamarin.Forms.Theme.Dark"
+             xmlns:command="clr-namespace:PaperBoy.Common.Commands" 
              x:Class="PaperBoy.App">
 	<Application.Resources>
         <ResourceDictionary>
+            
+            <command:NavigateToSettingsCommand x:Key="NavigateToSettingsCommand"/>
+            <command:RefreshNewsCommand x:Key="RefreshNewsCommand"/>
+            
             <Color x:Key="ListTextColor">#000000</Color>
 
             <Style x:Key="ListTitleStyle" TargetType="Label">

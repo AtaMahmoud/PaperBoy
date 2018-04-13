@@ -28,5 +28,9 @@ namespace PaperBoy.Pages
             articleCounterSlider.Value = 10;
             categoryPicker.SelectedIndex = 1;
         }
+        private void OnSaveClicked(object sender,EventArgs e)
+        {
+            App.Current.Resources["ListTextColor"] = Color.Blue;
+        }
     }
 }

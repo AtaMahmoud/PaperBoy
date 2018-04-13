@@ -5,8 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using PaperBoy.Helpers;
 using PaperBoy.Models;
+using PaperBoy.Common.Commands;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using PaperBoy.Models.News;
 
 namespace PaperBoy.Pages
 {
@@ -22,6 +24,9 @@ namespace PaperBoy.Pages
             this.BindingContext = App.viewModel;
             base.OnAppearing();
         }
-
+        public void OnItemTapped(object sender,ItemTappedEventArgs e)
+        {
+            new NavigateToDetailCommand().Execute(e.Item as NewsInformation);
+        }
     }
 }

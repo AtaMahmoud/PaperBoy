@@ -26,6 +26,8 @@ namespace PaperBoy
                 App.viewModel = new MainViewModel();
                 App.viewModel.RefreshNewsAsync();
             }
+            
+            App.MainNavigation = Navigation;
 
             CrossConnectivity.Current.ConnectivityChanged += OnConnectivityChannged;
             base.OnAppearing();

@@ -158,4 +158,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\icon_world.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\icon_refresh.png" />
+  </ItemGroup>
 </Project>

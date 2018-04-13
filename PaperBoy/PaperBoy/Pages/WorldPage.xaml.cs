@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PaperBoy.Common.Commands;
 using PaperBoy.Models;
+using PaperBoy.Models.News;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -20,6 +22,10 @@ namespace PaperBoy.Pages
         {
             this.BindingContext = App.viewModel;
             base.OnAppearing();
+        }
+        public void OnItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            new NavigateToDetailCommand().Execute(e.Item as NewsInformation);
         }
     }
 }

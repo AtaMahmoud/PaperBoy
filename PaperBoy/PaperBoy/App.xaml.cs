@@ -10,6 +10,7 @@ namespace PaperBoy
 	public partial class App : Application
 	{
         public static MainViewModel  viewModel{ get; set; }
+        public static INavigation MainNavigation { get; set; }
         public App()
 		{
 			InitializeComponent();

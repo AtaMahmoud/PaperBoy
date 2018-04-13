@@ -7,7 +7,7 @@
              x:Class="PaperBoy.MainPage">
     
     <TabbedPage.ToolbarItems>
-        <ToolbarItem Icon="icon_settings.png" Clicked="OnSettingsClicked"/>
+        <ToolbarItem Icon="icon_settings.png" Command="{StaticResource NavigateToSettingsCommand}" Text="Settings" Order="Primary"/>
     </TabbedPage.ToolbarItems>
     
     <TabbedPage.Children>

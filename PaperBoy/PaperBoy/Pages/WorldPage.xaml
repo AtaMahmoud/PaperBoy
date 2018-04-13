@@ -2,9 +2,14 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PaperBoy.Pages.WorldPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Icon="icon_refresh.png" Command="{StaticResource RefreshNewsCommand}" CommandParameter="World" Text="Refresh" Order="Primary"/>
+    </ContentPage.ToolbarItems>
+
     <ListView
         x:Name="newsListView"
         HasUnevenRows="True"
+        ItemTapped="OnItemTapped"
         IsRefreshing="{Binding IsBusy}"
         ItemsSource="{Binding WorldNews}"
         Margin="20">

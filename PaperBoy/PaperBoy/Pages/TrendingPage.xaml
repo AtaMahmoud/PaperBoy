@@ -3,9 +3,15 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
              x:Class="PaperBoy.Pages.TrendingPage">
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Icon="icon_refresh.png" Command="{StaticResource RefreshNewsCommand}" CommandParameter="Trending" Text="Refresh" Order="Primary"/>
+    </ContentPage.ToolbarItems>
+
     <ListView
         x:Name="newsListView"
         HasUnevenRows="True"
+        ItemTapped="OnItemTapped"
         SeparatorVisibility="Default"
         IsRefreshing="{Binding IsBusy}"
         ItemsSource="{Binding TrendingNews}"

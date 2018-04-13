@@ -2,8 +2,13 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PaperBoy.Pages.TechnologyPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Icon="icon_refresh.png" Command="{StaticResource RefreshNewsCommand}" CommandParameter="Technology" Text="Refresh" Order="Primary"/>
+    </ContentPage.ToolbarItems>
+    
     <ListView
         x:Name="newsListView"
+        ItemTapped="OnItemTapped"
         HasUnevenRows="True"
         IsRefreshing="{Binding IsBusy}"
         ItemsSource="{Binding TechnologyNews}"

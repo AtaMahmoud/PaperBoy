@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PaperBoy.Pages.ItemDetailPage">
+    <StackLayout Margin="40">
+        
+        <Image VerticalOptions="Center"
+               Source="{Binding ImageUrl}"
+               Aspect="AspectFit"/>
+        
+        <Label Style="{DynamicResource ListTitleStyle}"
+               Text="{Binding Title}"/>
+        
+        <Label Style="{DynamicResource ListDescriptionStyle}"
+               Text="{Binding Description}"/>
+        
+        <Label Style="{DynamicResource ListDescriptionStyle}"
+               Text="{Binding CreatedDate,StringFormat='UPDATE: {0:dddd h:mm tt} GMT'}"/>
+        
+    </StackLayout>
+</ContentPage>

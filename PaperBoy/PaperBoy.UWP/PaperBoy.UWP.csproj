@@ -104,6 +104,7 @@
     <None Include="PaperBoy.UWP_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="icon_refresh.png" />
     <Content Include="icon_settings.png" />
     <Content Include="icon_technology.png" />
     <Content Include="icon_trending.png" />
