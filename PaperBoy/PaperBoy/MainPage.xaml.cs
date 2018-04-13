@@ -33,9 +33,5 @@ namespace PaperBoy
         {
             await Navigation.PushAsync(new Pages.SettingPage());
         }
-        private async void OnStyleTestClicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new Pages.TestingPage());
-        }
     }
 }
