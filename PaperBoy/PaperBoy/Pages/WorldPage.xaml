@@ -18,6 +18,7 @@
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"/>
                             <RowDefinition/>
+                            <RowDefinition Height="Auto"/>
                         </Grid.RowDefinitions>
 
                         <!--<controls:CircleImage Margin="5"
@@ -35,15 +36,23 @@
                                Grid.Column="0"
                                Grid.Row="0"/>
                         <Label FontSize="Medium"
+                               Style="{DynamicResource ListTitleStyle}"
                                Grid.Column="1"
                                Grid.Row="0"
                                Margin="0,5,0,0"
                                Text="{Binding Title}"/>
                         <Label VerticalTextAlignment="Start"
+                               Style="{DynamicResource ListDescriptionStyle}"
                                VerticalOptions="Start"
                                Grid.Column="1"
                                Grid.Row="1"
                                Text="{Binding Description}"/>
+                        <Label VerticalOptions="Start" 
+                               Margin="0,5" 
+                               FontSize="Micro" 
+                               Grid.Column="1" 
+                               Grid.Row="2"
+                               Text="{Binding CreatedDate,StringFormat='UPDATED:{0:dddd h:mm tt} GMT'}"/>
                     </Grid>
                 </ViewCell>
             </DataTemplate>

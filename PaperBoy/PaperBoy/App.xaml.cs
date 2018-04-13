@@ -9,7 +9,7 @@ namespace PaperBoy
 {
 	public partial class App : Application
 	{
-		public App ()
+		public App()
 		{
 			InitializeComponent();
 

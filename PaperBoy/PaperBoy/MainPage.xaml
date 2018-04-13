@@ -8,6 +8,7 @@
     
     <TabbedPage.ToolbarItems>
         <ToolbarItem Icon="icon_settings.png" Clicked="OnSettingsClicked"/>
+        <ToolbarItem Text="Style Test" Clicked="OnStyleTestClicked"/>
     </TabbedPage.ToolbarItems>
     
     <TabbedPage.Children>

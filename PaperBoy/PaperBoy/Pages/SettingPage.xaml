@@ -7,20 +7,21 @@
     
     <ScrollView Margin="10,0,0,0">
         <StackLayout Margin="40">
-            <Label Text="Adjust your app settings and preferences as needed." FontSize="Large"/>
+            <Label Style="{x:DynamicResource TitleStyle}" Text="Adjust your app settings and preferences as needed." />
 
-            <Label Text="Maxmum articles to display:"/>
+            <Label Style="{x:DynamicResource SubtitleStyle}" Text="Maxmum articles to display:"/>
             <Slider x:Name="articleCounterSlider" Minimum="0" Maximum="20"/>
 
-            <Label Text="Enter your display name:"/>
+            <Label Style="{x:DynamicResource SubtitleStyle}" Text="Enter your display name:"/>
             <Entry x:Name="displayNameEntry"/>
-            
+           
+
             <controls:CircleImage HeightRequest="160" WidthRequest="160" Aspect="AspectFit"/>
-            
-            <Label Text="My bio:"/>
+
+            <Label Style="{x:DynamicResource SubtitleStyle}" Text="My bio:"/>
             <Editor HeightRequest="160" x:Name="bioEditor"/>
 
-            <Label Text="Select a default news category:"/>
+            <Label Style="{x:DynamicResource SubtitleStyle}" Text="Select a default news category:"/>
             <Picker x:Name="categoryPicker">
                 <Picker.Items>
                     <x:String>Business</x:String>

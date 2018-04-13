@@ -18,33 +18,50 @@
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
                             <RowDefinition/>
+                            <RowDefinition Height="Auto"/>
                         </Grid.RowDefinitions>
 
-                        <controls:CircleImage Margin="5"
+                        <!--<controls:CircleImage Margin="5"
                                               HeightRequest="100"
                                               WidthRequest="100"
                                               Grid.RowSpan="2"
                                               Source="{Binding ImageUrl}"
                                               Grid.Column="0"
-                                              Grid.Row="0"/>
-                        <!--<Image Margin="5"
+                                              Grid.Row="0"/>-->
+                        <Image Margin="5"
                                HeightRequest="100"
                                WidthRequest="100"
-                               Grid.RowSpan="2"
+                               Grid.RowSpan="3"
                                Source="{Binding ImageUrl}"
                                Grid.Column="0"
-                               Grid.Row="0"/>-->
+                               Grid.Row="0"/>
                         <Label FontSize="Medium"
                                Grid.Column="1"
                                Grid.Row="0"
                                Margin="0,5,0,0"
+                               Style="{DynamicResource ListTitleStyle}"
                                Text="{Binding Title}"/>
+                        <Label Style="{DynamicResource ListDescriptionStyle}"
+                               Text="TOPIC:"
+                               Grid.Column="1"
+                               Grid.Row="1"/>
                         <Label VerticalTextAlignment="Start"
                                VerticalOptions="Start"
                                Grid.Column="1"
-                               Grid.Row="1"
+                               Grid.Row="2"
+                               Style="{DynamicResource ListDescriptionStyle}"
                                Text="{Binding Description}"/>
+                       
+                               
+                        <Label VerticalOptions="Start" 
+                               Margin="0" 
+                               FontSize="Micro" 
+                               Grid.Column="1" 
+                               Grid.Row="3"
+                               Text="{Binding CreatedDate,StringFormat='UPDATED:{0:dddd h:mm tt} GMT'}"/>
+
                     </Grid>
                 </ViewCell>
             </DataTemplate>

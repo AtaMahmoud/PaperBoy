@@ -24,9 +24,24 @@ namespace PaperBoy.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
+
+            UIColor accentColor = UIColor.FromRGB(0, 89, 178);
+
+            UISlider.Appearance.TintColor = accentColor;
+            UISlider.Appearance.ThumbTintColor = accentColor;
+
+            UITabBar.Appearance.TintColor = accentColor;
+            UITabBar.Appearance.SelectedImageTintColor = accentColor;
+
+            UINavigationBar.Appearance.BarTintColor = accentColor;
+            UINavigationBar.Appearance.TintColor = accentColor;
+            UINavigationBar.Appearance.SetTitleTextAttributes(new UITextAttributes { TextColor = UIColor.White });
+
             ImageCircleRenderer.Init();
             LoadApplication(new App());
-
+            var x = typeof(Xamarin.Forms.Themes.DarkThemeResources);
+            x = typeof(Xamarin.Forms.Themes.LightThemeResources);
+            x = typeof(Xamarin.Forms.Themes.iOS.UnderlineEffect);
             return base.FinishedLaunching(app, options);
         }
     }

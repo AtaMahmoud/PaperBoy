@@ -26,12 +26,16 @@ namespace PaperBoy
 
         private void OnConnectivityChannged(object sender, ConnectivityChangedEventArgs e)
         {
-            
+            //TODO: Method Impilimentation
         }
-
+       
         private async void OnSettingsClicked(object sender,EventArgs e)
         {
             await Navigation.PushAsync(new Pages.SettingPage());
         }
-	}
+        private async void OnStyleTestClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Pages.TestingPage());
+        }
+    }
 }
