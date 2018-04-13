@@ -19,16 +19,9 @@ namespace PaperBoy.Pages
 		}
         protected override void OnAppearing()
         {
-            LoadNewsAsync();
+            this.BindingContext = App.viewModel;
             base.OnAppearing();
         }
 
-        private async void LoadNewsAsync()
-        {
-            newsListView.IsRefreshing = true;
-            var news =await NewsHelper.GetByCategoryAsync(NewsCategoryType.ScienceAndTechnology);
-            this.BindingContext = news;
-            newsListView.IsRefreshing = false;
-        }
     }
 }

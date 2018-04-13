@@ -12,7 +12,6 @@ namespace PaperBoy.Pages
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class SettingPage : ContentPage
 	{
-        public UserInformation currentUser { get; set; }
         public SettingPage ()
 		{
 			InitializeComponent ();
@@ -25,12 +24,7 @@ namespace PaperBoy.Pages
 
         private void InitializaeSetting()
         {
-            this.currentUser = new UserInformation()
-            {
-                DisplayName= "Ata Mahmoud",
-                BioContent= "Egyptian Computer Scienece Student and Software Engingeer"
-            };
-            this.BindingContext = currentUser;
+            this.BindingContext = App.viewModel.CurrentUser;
             articleCounterSlider.Value = 10;
             categoryPicker.SelectedIndex = 1;
         }

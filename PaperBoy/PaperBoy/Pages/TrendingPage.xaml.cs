@@ -19,16 +19,10 @@ namespace PaperBoy.Pages
         }
         protected override void OnAppearing()
         {
-            LoadNewsAsync();
+            this.BindingContext = App.viewModel;
             base.OnAppearing();
         }
 
-        private async void LoadNewsAsync()
-        {
-            newsListView.IsRefreshing = true;
-            var news = await Helpers.NewsHelper.GetTrendingAsync();
-            BindingContext = news;
-            newsListView.IsRefreshing = false;
-        }
+        
     }
 }

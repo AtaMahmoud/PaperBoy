@@ -7,6 +7,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Plugin.Connectivity;
 using Plugin.Connectivity.Abstractions;
+using PaperBoy.ViewModels;
 
 namespace PaperBoy
 {
@@ -20,6 +21,12 @@ namespace PaperBoy
 
         protected override void OnAppearing()
         {
+            if(App.viewModel==null)
+            {
+                App.viewModel = new MainViewModel();
+                App.viewModel.RefreshNewsAsync();
+            }
+
             CrossConnectivity.Current.ConnectivityChanged += OnConnectivityChannged;
             base.OnAppearing();
         }

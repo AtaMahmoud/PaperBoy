@@ -2,14 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using PaperBoy.ViewModels;
 using Xamarin.Forms;
 
 namespace PaperBoy
 {
 	public partial class App : Application
 	{
-		public App()
+        public static MainViewModel  viewModel{ get; set; }
+        public App()
 		{
 			InitializeComponent();
 
