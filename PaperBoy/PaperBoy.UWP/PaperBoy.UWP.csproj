@@ -94,6 +94,7 @@
     </Compile>
     <Compile Include="DependencyServices\DeviceOrientaion.cs" />
     <Compile Include="DependencyServices\PlatformLabel.cs" />
+    <Compile Include="DependencyServices\TextSpeecher.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>

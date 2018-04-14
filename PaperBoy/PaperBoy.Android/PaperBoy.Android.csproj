@@ -75,6 +75,7 @@
   <ItemGroup>
     <Compile Include="DependencyServices\DeviceOreantaion.cs" />
     <Compile Include="DependencyServices\PlatformLabel.cs" />
+    <Compile Include="DependencyServices\TextSpeecher.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

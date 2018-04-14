@@ -1,5 +1,6 @@
 ﻿using PaperBoy.Pages;
 using PaperBoy.Models.News;
+using PaperBoy.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -94,6 +95,24 @@ namespace PaperBoy.Common.Commands
         private async void NavigateToDetailAsync(NewsInformation article)
         {
             await App.MainNavigation.PushAsync(new ItemDetailPage(article));
+        }
+    }
+
+    public class SpeakCommand : ICommand
+    {
+        public event EventHandler CanExecuteChanged;
+
+        public bool CanExecute(object parameter)
+        {
+            return true;
+        }
+         public void RaiseCanExecuteChanged()
+        {
+            CanExecuteChanged?.Invoke(this, EventArgs.Empty);
+        }
+        public void Execute(object parameter)
+        {
+            GeneralHelper.Speak((string)parameter);
         }
     }
 }

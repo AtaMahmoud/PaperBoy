@@ -90,6 +90,7 @@
   <ItemGroup>
     <Compile Include="DependencyServices\DeviceOrentaion.cs" />
     <Compile Include="DependencyServices\PlatformLabel.cs" />
+    <Compile Include="DependencyServices\TextSpeecher.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <None Include="Entitlements.plist" />

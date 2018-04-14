@@ -16,6 +16,8 @@
         
         <Label Style="{DynamicResource ListDescriptionStyle}"
                Text="{Binding CreatedDate,Converter={StaticResource AgoLabelConverter}"/>
-        
+
+        <Button Text="Read Article" Command="{StaticResource SpeakCommand}" CommandParameter="{Binding Title}"/>
+
     </StackLayout>
 </ContentPage>
