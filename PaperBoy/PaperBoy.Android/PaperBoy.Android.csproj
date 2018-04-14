@@ -73,6 +73,7 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DependencyServices\DeviceOreantaion.cs" />
     <Compile Include="DependencyServices\PlatformLabel.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />

@@ -18,6 +18,9 @@
             <Label Style="{x:DynamicResource SubtitleStyle}" Text="Current operating System:"/>
             <Label FontAttributes="Bold" Style="{x:DynamicResource SubtitleStyle}" Text="{Binding ExtendedPlatformLabel}"/>
 
+            <Label Style="{x:DynamicResource SubtitleStyle}" Text="Device orientation:"/>
+            <Label FontAttributes="Bold" Style="{x:DynamicResource SubtitleStyle}" Text="{Binding DeviceOrientation}"/>
+            
             <Label Style="{x:DynamicResource SubtitleStyle}" Text="Select a default news category:"/>
             <Picker x:Name="categoryPicker">
                 <Picker.Items>

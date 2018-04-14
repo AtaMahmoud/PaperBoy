@@ -88,6 +88,7 @@
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="DependencyServices\DeviceOrentaion.cs" />
     <Compile Include="DependencyServices\PlatformLabel.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />

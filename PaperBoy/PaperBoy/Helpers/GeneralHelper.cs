@@ -8,6 +8,11 @@ namespace PaperBoy.Helpers
 {
     public class GeneralHelper
     {
+        public static DeviceOrientations GetOrientation()
+        {
+            var orientation = DependencyService.Get<IDeviceOrentaion>().GetOrientation();
+            return orientation;
+        }
         public static string GetLabel()
         {
             var label = DependencyService.Get<IPlatformLabel>().GetLabel();

@@ -34,6 +34,10 @@ namespace PaperBoy.Pages
 
             App.viewModel.PlatformLabel = label;
             App.viewModel.ExtendedPlatformLabel = extendedLabel;
+
+            var orientation = GeneralHelper.GetOrientation();
+            App.viewModel.DeviceOrientation = orientation;
+
         }
         private void OnSaveClicked(object sender,EventArgs e)
         {

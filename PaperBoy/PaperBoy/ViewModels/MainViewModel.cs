@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
+using PaperBoy.Interfaces;
 
 namespace PaperBoy.ViewModels
 {
@@ -60,6 +61,13 @@ namespace PaperBoy.ViewModels
         {
             get => _extendedPlatformLabel;
             set { SetProperty(ref this._extendedPlatformLabel, value); }
+        }
+
+        private DeviceOrientations _deviceOrientation;
+        public DeviceOrientations DeviceOrientation
+        {
+            get => _deviceOrientation;
+            set { SetProperty(ref this._deviceOrientation, value); }
         }
         public MainViewModel()
         {

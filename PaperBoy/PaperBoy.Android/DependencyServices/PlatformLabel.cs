@@ -1,20 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
-using Android.Content;
-using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
-using PaperBoy.Droid;
+﻿using Android.OS;
 using PaperBoy.Droid.DependencyServices;
 using PaperBoy.Interfaces;
 using Xamarin.Forms;
 
-[assembly:Dependency(typeof(PlatformLabel))]
+[assembly: Dependency(typeof(PlatformLabel))]
 namespace PaperBoy.Droid.DependencyServices
 {
     public class PlatformLabel : IPlatformLabel
