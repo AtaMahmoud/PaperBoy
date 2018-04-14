@@ -47,6 +47,20 @@ namespace PaperBoy.ViewModels
             get => _isBusy;
             set { SetProperty(ref this._isBusy, value); }
         }
+
+        private string _platformLabel;
+        public string PlatformLabel
+        {
+            get => _platformLabel;
+            set { SetProperty(ref this._platformLabel,value); }
+        }
+
+        private string _extendedPlatformLabel;
+        public string ExtendedPlatformLabel
+        {
+            get => _extendedPlatformLabel;
+            set { SetProperty(ref this._extendedPlatformLabel, value); }
+        }
         public MainViewModel()
         {
             WorldNews = new ObservableCollection<NewsInformation>();

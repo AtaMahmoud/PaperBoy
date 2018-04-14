@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using PaperBoy.Models;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using PaperBoy.Helpers;
 
 namespace PaperBoy.Pages
 {
@@ -24,9 +25,15 @@ namespace PaperBoy.Pages
 
         private void InitializaeSetting()
         {
-            this.BindingContext = App.viewModel.CurrentUser;
+            this.BindingContext = App.viewModel;
             articleCounterSlider.Value = 10;
             categoryPicker.SelectedIndex = 1;
+
+            var label = GeneralHelper.GetLabel();
+            var extendedLabel = GeneralHelper.GetLabel("Running PaperBoy on", true);
+
+            App.viewModel.PlatformLabel = label;
+            App.viewModel.ExtendedPlatformLabel = extendedLabel;
         }
         private void OnSaveClicked(object sender,EventArgs e)
         {

@@ -13,13 +13,10 @@
             <Slider x:Name="articleCounterSlider" Minimum="0" Maximum="20" />
 
             <Label Style="{x:DynamicResource SubtitleStyle}" Text="Enter your display name:"/>
-            <Entry Text="{Binding DisplayName}"/>
-           
+            <Entry Text="{Binding CurrentUser.DisplayName}"/>
 
-            <controls:CircleImage HeightRequest="160" WidthRequest="160" Aspect="AspectFit"/>
-
-            <Label Style="{x:DynamicResource SubtitleStyle}" Text="My bio:"/>
-            <Editor HeightRequest="160" Text="{Binding BioContent}"/>
+            <Label Style="{x:DynamicResource SubtitleStyle}" Text="Current operating System:"/>
+            <Label FontAttributes="Bold" Style="{x:DynamicResource SubtitleStyle}" Text="{Binding ExtendedPlatformLabel}"/>
 
             <Label Style="{x:DynamicResource SubtitleStyle}" Text="Select a default news category:"/>
             <Picker x:Name="categoryPicker">
