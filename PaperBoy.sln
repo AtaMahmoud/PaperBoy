@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaperBoy.iOS", "PaperBoy\Pa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaperBoy.UWP", "PaperBoy\PaperBoy.UWP\PaperBoy.UWP.csproj", "{EA1DD005-5C7A-402A-BD87-66FA593B47D3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PaperBoy", "PaperBoy\PaperBoy\PaperBoy.csproj", "{1B4460E7-7CFB-4C1B-96D1-92852C506B72}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaperBoy", "PaperBoy\PaperBoy\PaperBoy.csproj", "{1B4460E7-7CFB-4C1B-96D1-92852C506B72}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

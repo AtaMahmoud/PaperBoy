@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows.Input;
-using PaperBoy.Extensions;
+
 namespace PaperBoy.Common.Commands
 {
     public class NavigateToSettingsCommand : ICommand
@@ -66,9 +66,6 @@ namespace PaperBoy.Common.Commands
                 case "Technology":
                     await App.viewModel.RefreshTechnologyNewsAsync();
                     break;
-                case "Favorites":
-                    await App.viewModel.RefreshFavoritesAsync();
-                    break;
             }
             this._isBusy = false;
             RaiseCanChange();
@@ -97,7 +94,7 @@ namespace PaperBoy.Common.Commands
 
         private async void NavigateToDetailAsync(NewsInformation article)
         {
-            await App.MainNavigation.PushAsync(new ItemDetailPage(article),true);
+            await App.MainNavigation.PushAsync(new ItemDetailPage(article));
         }
     }
 
@@ -117,37 +114,5 @@ namespace PaperBoy.Common.Commands
         {
             GeneralHelper.Speak((string)parameter);
         }
-    }
-
-    public class ToggleFavoriteCommand : ICommand
-    {
-        private bool _isBusy=false;
-        public event EventHandler CanExecuteChanged;
-
-        public bool CanExecute(object parameter)
-        {
-            return !_isBusy;
-        }
-        public void RaiseCanExecuteChanged()
-        {
-            CanExecuteChanged?.Invoke(this, EventArgs.Empty);
-        }
-        public void Execute(object parameter)
-        {
-            ToggleFavoriteAsync(parameter as NewsInformation);
-        }
-        public async void ToggleFavoriteAsync(NewsInformation articel)
-        {
-           _isBusy = true;
-            RaiseCanExecuteChanged();
-            App.viewModel.IsBusy = true;
-
-            await App.viewModel.Favorites.AddAsync(await articel.AsFavorite("Technology"));
-
-           _isBusy = false;
-            RaiseCanExecuteChanged();
-            App.viewModel.IsBusy = false;
-        }
-
     }
 }

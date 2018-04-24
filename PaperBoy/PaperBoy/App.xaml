@@ -12,7 +12,6 @@
             <command:NavigateToSettingsCommand x:Key="NavigateToSettingsCommand"/>
             <command:RefreshNewsCommand x:Key="RefreshNewsCommand"/>
             <command:SpeakCommand x:Key="SpeakCommand"/>
-            <command:ToggleFavoriteCommand x:Key="ToggleFavoriteCommand"/>
 
             <converters:LableFontWeightConverter x:Key="LableFontWeightConverter"/>
             <converters:AgoLabelConverter x:Key="AgoLabelConverter"/>
