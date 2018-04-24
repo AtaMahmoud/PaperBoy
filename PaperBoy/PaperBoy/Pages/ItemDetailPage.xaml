@@ -2,6 +2,9 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PaperBoy.Pages.ItemDetailPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Command="{StaticResource ToggleFavoriteCommand}" CommandParameter="{Binding}" Order="Secondary" Text="Add to Favorites" Icon="icon_favorites.png"/>
+    </ContentPage.ToolbarItems>
     <StackLayout Margin="40">
         
         <Image VerticalOptions="Center"

@@ -9,6 +9,8 @@ using System.Text;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using PaperBoy.Interfaces;
+using PaperBoy.Data;
+using PaperBoy.Extensions;
 
 namespace PaperBoy.ViewModels
 {
@@ -69,12 +71,20 @@ namespace PaperBoy.ViewModels
             get => _deviceOrientation;
             set { SetProperty(ref this._deviceOrientation, value); }
         }
+
+        private FavoritesCollection _favorites;
+        public FavoritesCollection Favorites
+        {
+            get => _favorites;
+            set { SetProperty(ref this._favorites, value); }
+        }
         public MainViewModel()
         {
             WorldNews = new ObservableCollection<NewsInformation>();
             TechnologyNews = new ObservableCollection<NewsInformation>();
             TrendingNews = new ObservableCollection<NewsInformation>();
 
+            Favorites = new FavoritesCollection();
             CurrentUser = new UserInformation()
             {
                 DisplayName = "Ata Mahmoud",
@@ -86,13 +96,28 @@ namespace PaperBoy.ViewModels
         {
             this.IsBusy = true;
 
+            await RefreshTrendingNewsAsync();
             await RefreshWorldNewsAsync();
             await RefreshTechnologyNewsAsync();
-            await RefreshTrendingNewsAsync();
 
             this.IsBusy = false;
         }
 
+        public async Task RefreshFavoritesAsync()
+        {
+            this.IsBusy = true;
+
+            Favorites.Clear();
+
+            var favorites = await FavoriteManager.DefaultManager.GetFavoritesAsync();
+
+            foreach (var favorite in favorites)
+            {
+                this.Favorites.Add(favorite.AsFavorite("Technology"));
+            }
+
+            this.IsBusy = false;
+        }
         public async Task RefreshTrendingNewsAsync()
         {
             TrendingNews.Clear();

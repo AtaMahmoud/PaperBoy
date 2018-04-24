@@ -2,15 +2,30 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using PaperBoy.Data;
 using PaperBoy.ViewModels;
 using Xamarin.Forms;
+using PaperBoy.Helpers;
 
 namespace PaperBoy
 {
-	public partial class App : Application
+    //android Package name : com.paperboy.android
+    public partial class App : Application
 	{
         public static MainViewModel  viewModel{ get; set; }
         public static INavigation MainNavigation { get; set; }
+        //private static FavoritesDatabase database;
+        //public static FavoritesDatabase Database
+        //{
+        //    get
+        //    {
+        //        if(database==null)
+        //        {
+        //            database=new FavoritesDatabase(StorageHelper.GetLocalFilePath("Favorite.db"));
+        //        }
+        //        return database;
+        //    }
+        //}
         public App()
 		{
 			InitializeComponent();

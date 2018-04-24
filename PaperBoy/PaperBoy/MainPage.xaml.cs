@@ -38,9 +38,6 @@ namespace PaperBoy
             //TODO: Method Impilimentation
         }
        
-        private async void OnSettingsClicked(object sender,EventArgs e)
-        {
-            await Navigation.PushAsync(new Pages.SettingPage());
-        }
+       
     }
 }
