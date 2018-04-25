@@ -4,6 +4,9 @@ using System.Linq;
 
 using Foundation;
 using ImageCircle.Forms.Plugin.iOS;
+using Microsoft.WindowsAzure.MobileServices;
+using Newtonsoft.Json.Linq;
+using PaperBoy.Data;
 using UIKit;
 
 namespace PaperBoy.iOS
@@ -38,11 +41,52 @@ namespace PaperBoy.iOS
             UINavigationBar.Appearance.SetTitleTextAttributes(new UITextAttributes { TextColor = UIColor.White });
 
             ImageCircleRenderer.Init();
+
+            RegisterForPushNotifications();
             LoadApplication(new App());
             var x = typeof(Xamarin.Forms.Themes.DarkThemeResources);
             x = typeof(Xamarin.Forms.Themes.LightThemeResources);
             x = typeof(Xamarin.Forms.Themes.iOS.UnderlineEffect);
             return base.FinishedLaunching(app, options);
+        }
+
+        private void RegisterForPushNotifications()
+        {
+            var settings = UIUserNotificationSettings.GetSettingsForTypes(
+                UIUserNotificationType.Alert
+                | UIUserNotificationType.Badge
+                | UIUserNotificationType.Sound,
+                new NSSet());
+
+            UIApplication.SharedApplication.RegisterUserNotificationSettings(settings);
+            UIApplication.SharedApplication.RegisterForRemoteNotifications();
+        }
+
+        public override void RegisteredForRemoteNotifications(UIApplication application, NSData deviceToken)
+        {
+            const string templateBodyAPNS= "{\"aps\":{\"alert\":\"$(messageParam)\"}}";
+
+            JObject templates =new JObject();
+            templates["genericMessage"] = new JObject()
+            {
+                {"body", templateBodyAPNS}
+            };
+
+            Push push = FavoriteManager.DefaultManager.CurrentClient.GetPush();
+
+#pragma warning disable CS1701 // Assuming assembly reference matches identity
+            push.RegisterAsync(deviceToken, templates);
+#pragma warning restore CS1701 // Assuming assembly reference matches identity
+        }
+
+        public override void FailedToRegisterForRemoteNotifications(UIApplication application, NSError error)
+        {
+            
+        }
+
+        public override void ReceivedRemoteNotification(UIApplication application, NSDictionary userInfo)
+        {
+            Helpers.ToastHelper.ProcessNotification(userInfo);
         }
     }
 }
