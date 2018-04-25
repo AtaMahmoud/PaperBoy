@@ -4,10 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading.Tasks;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Networking.PushNotifications;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -15,6 +17,9 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Newtonsoft.Json.Linq;
+using PaperBoy.Data;
+using Microsoft.WindowsAzure.MobileServices;
 
 namespace PaperBoy.UWP
 {
@@ -38,10 +43,10 @@ namespace PaperBoy.UWP
         /// will be used such as when the application is launched to open a specific file.
         /// </summary>
         /// <param name="e">Details about the launch request and process.</param>
-        protected override void OnLaunched(LaunchActivatedEventArgs e)
+        protected async override void OnLaunched(LaunchActivatedEventArgs e)
         {
-
-
+            await InitNotificationAsync();
+            //Helpers.ToastHelper.RegisterPushListenerTask();
             Frame rootFrame = Window.Current.Content as Frame;
 
             // Do not repeat app initialization when the Window already has content,
@@ -73,6 +78,33 @@ namespace PaperBoy.UWP
             }
             // Ensure the current window is active
             Window.Current.Activate();
+        }
+
+        private async  Task InitNotificationAsync()
+        {
+            var channel = await PushNotificationChannelManager.CreatePushNotificationChannelForApplicationAsync();
+
+            const string templateBodyWNS = "{\"message\":\"$(messageParam)\"}";
+
+            JObject headers=new JObject();
+            headers["X-WNS-Type"] = "wns/raw";
+
+            JObject templates=new JObject();
+            templates["genericMessage"] = new JObject
+            {
+                {"body", templateBodyWNS},
+                {"headers", headers}
+            };
+
+            var push = FavoriteManager.DefaultManager.CurrentClient.GetPush();
+            await push.RegisterAsync(channel.Uri, templates);
+
+            channel.PushNotificationReceived += OnNotificationRecived;
+        }
+
+        private void OnNotificationRecived(PushNotificationChannel sender, PushNotificationReceivedEventArgs args)
+        {
+           // Helpers.ToastHelper.ProcessNotification(args);
         }
 
         /// <summary>
