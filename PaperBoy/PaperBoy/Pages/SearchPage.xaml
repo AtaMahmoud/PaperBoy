@@ -30,7 +30,7 @@
         Grid.Row="2"
         Grid.RowSpan="2"
         IsRefreshing="{Binding IsBusy}"
-        ItemsSource="{Binding TechnologyNews}"
+        ItemsSource="{Binding SearchResult}"
         Margin="20">
             <ListView.ItemTemplate>
                 <DataTemplate>
@@ -46,13 +46,7 @@
                                 <RowDefinition Height="Auto"/>
                             </Grid.RowDefinitions>
 
-                            <!--<controls:CircleImage Margin="5"
-                                              HeightRequest="100"
-                                              WidthRequest="100"
-                                              Grid.RowSpan="2"
-                                              Source="{Binding ImageUrl}"
-                                              Grid.Column="0"
-                                              Grid.Row="0"/>-->
+                           
                             <Image Margin="5"
                                HeightRequest="100"
                                WidthRequest="100"

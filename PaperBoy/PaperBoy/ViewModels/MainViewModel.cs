@@ -152,9 +152,9 @@ namespace PaperBoy.ViewModels
             SearchResult.Clear();
 
             string query = this.SearchQuery;
-            var sewarchResult = await NewsHelper.GetSearchAsync(query);
+            var searchResults = await NewsHelper.GetSearchAsync(query);
 
-            foreach (var item in SearchResult)
+            foreach (var item in searchResults)
             {
                 SearchResult.Add(item);
             }
