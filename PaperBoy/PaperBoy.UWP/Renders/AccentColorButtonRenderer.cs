@@ -2,15 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
-using Foundation;
-using PaperBoy.iOS.Helpers;
-using PaperBoy.iOS.Renders;
-using UIKit;
+using System.Threading.Tasks;
+using PaperBoy.UWP.Helpers;
+using PaperBoy.UWP.Renders;
 using Xamarin.Forms;
-using Xamarin.Forms.Platform.iOS;
+using Xamarin.Forms.Platform.UWP;
 [assembly:ExportRenderer(typeof(Xamarin.Forms.Button),typeof(AccentColorButtonRenderer))]
-namespace PaperBoy.iOS.Renders
+namespace PaperBoy.UWP.Renders
 {
     public class AccentColorButtonRenderer : ButtonRenderer
     {
