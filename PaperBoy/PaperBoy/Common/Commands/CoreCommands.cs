@@ -57,8 +57,8 @@ namespace PaperBoy.Common.Commands
 
             switch(newsType)
             {
-                case "World":
-                    await App.viewModel.RefreshWorldNewsAsync();
+                case "Search":
+                    await App.viewModel.RefreshSearchResultAsync();
                     break;
                 case "Trending":
                     await App.viewModel.RefreshTrendingNewsAsync();

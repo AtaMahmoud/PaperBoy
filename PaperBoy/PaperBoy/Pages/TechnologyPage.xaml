@@ -59,7 +59,7 @@
                                FontSize="Micro" 
                                Grid.Column="1" 
                                Grid.Row="2"
-                               Text="{Binding CreatedDate,Converter={StaticResource AgoLabelConverter}"/>
+                               Text="{Binding CreatedDate,Converter={StaticResource AgoLabelConverter}}"/>
                     </Grid>
                 </ViewCell>
             </DataTemplate>

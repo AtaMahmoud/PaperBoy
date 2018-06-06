@@ -65,7 +65,7 @@ namespace PaperBoy.Droid
             edit.PutString("last_msg", msg.ToString());
             edit.Commit();
 
-            CreateNotification(title, "A new Favorite has been added");
+            CreateNotification(title,"A new Favorite has been added");
 
             return;
 

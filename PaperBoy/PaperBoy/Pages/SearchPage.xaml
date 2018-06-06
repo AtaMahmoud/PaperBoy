@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PaperBoy.Pages.SearchPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Icon="icon_refresh.png" Command="{StaticResource RefreshNewsCommand}" CommandParameter="Search" Priority="0" Text="Refresh" Order="Primary"/>
+    </ContentPage.ToolbarItems>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Label FontSize="Medium"  Text="Enter a search query: " Margin="5">
+            <Label.FontFamily>
+                <OnPlatform x:TypeArguments="x:String" iOS="Lobster-Regular" Android="Neon"
+                            WinPhone="/Assets/Fonts/ARISTA.ttf#[z] ARISTA"/>
+            </Label.FontFamily>
+        </Label>
+
+        <SearchBar SearchCommand="{StaticResource RefreshNewsCommand}" SearchCommandParameter="Search" Text="{Binding SearchQuery}" Grid.Row="1" Placeholder="Enter a search query">
+
+        </SearchBar>
+        <ListView
+        x:Name="newsListView"
+        ItemTapped="OnItemTapped"
+        HasUnevenRows="True"
+        Grid.Row="2"
+        Grid.RowSpan="2"
+        IsRefreshing="{Binding IsBusy}"
+        ItemsSource="{Binding TechnologyNews}"
+        Margin="20">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid Margin="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+                            <!--<controls:CircleImage Margin="5"
+                                              HeightRequest="100"
+                                              WidthRequest="100"
+                                              Grid.RowSpan="2"
+                                              Source="{Binding ImageUrl}"
+                                              Grid.Column="0"
+                                              Grid.Row="0"/>-->
+                            <Image Margin="5"
+                               HeightRequest="100"
+                               WidthRequest="100"
+                               Grid.RowSpan="2"
+                               Source="{Binding ImageUrl}"
+                               Grid.Column="0"
+                               Grid.Row="0"/>
+                            <Label FontSize="Medium"
+                               Style="{DynamicResource ListTitleStyle}"
+                               Grid.Column="1"
+                               Grid.Row="0"
+                               Margin="0,5,0,0"
+                               FontAttributes="{Binding Title,Converter={StaticResource LableFontWeightConverter}}"
+                               Text="{Binding Title}"/>
+                            <Label VerticalTextAlignment="Start"
+                               Style="{DynamicResource ListDescriptionStyle}"
+                               VerticalOptions="Start"
+                               Grid.Column="1"
+                               Grid.Row="1"
+                               Text="{Binding Description}"/>
+                            <Label VerticalOptions="Start" 
+                               Margin="0,5" 
+                               FontSize="Micro" 
+                               Grid.Column="1" 
+                               Grid.Row="2"
+                               Text="{Binding CreatedDate,Converter={StaticResource AgoLabelConverter}}"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+
+        </ListView>
+       
+        
+        <ActivityIndicator Grid.RowSpan="3" IsVisible="{Binding IsBusy}" WidthRequest="5" IsEnabled="{Binding IsBusy}" IsRunning="{Binding IsBusy}">
+        
+        </ActivityIndicator>
+    </Grid>
+  
+</ContentPage>

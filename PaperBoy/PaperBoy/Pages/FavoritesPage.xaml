@@ -27,7 +27,6 @@
                             <RowDefinition/>
                             <RowDefinition Height="Auto"/>
                         </Grid.RowDefinitions>
-
                        
                         <Image Margin="5"
                                HeightRequest="100"
@@ -54,7 +53,7 @@
                                FontSize="Micro" 
                                Grid.Column="1" 
                                Grid.Row="2"
-                               Text="{Binding ArticleDate,Converter={StaticResource AgoLabelConverter}"/>
+                               Text="{Binding ArticleDate,Converter={StaticResource AgoLabelConverter}}"/>
                     </Grid>
                 </ViewCell>
             </DataTemplate>

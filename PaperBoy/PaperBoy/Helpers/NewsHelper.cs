@@ -61,5 +61,28 @@ namespace PaperBoy.Helpers
                        }).ToList();
             return results.Where(w => !string.IsNullOrWhiteSpace(w.ImageUrl)).Take(10).ToList();
         }
+
+        public async static Task<List<NewsInformation>> GetSearchAsync(String searchQuery)
+        {
+            var results=new List<NewsInformation>();
+            var searchUrl= $"https://api.cognitive.microsoft.com/bing/v7.0/news/search?q={searchQuery}&mkt=en-US";
+
+            var client=new HttpClient();
+            client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", Common.CoreConstants.NewsSearchApiKey);
+
+            var url=new Uri(searchUrl);
+            var result =await client.GetStringAsync(url);
+
+            var searchResult = JsonConvert.DeserializeObject<NewsResult>(result);
+            results = (from item in searchResult.value
+                select new NewsInformation()
+                {
+                    Title = item.name,
+                    Description = item.description,
+                    ImageUrl = item.image?.thumbnail?.contentUrl,
+                    CreatedDate = item.datePublished
+                }).ToList();
+            return results.Where(w => !String.IsNullOrWhiteSpace(w.ImageUrl)).Take(10).ToList();
+        }
     }
 }

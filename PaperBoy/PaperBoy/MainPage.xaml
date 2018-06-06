@@ -12,7 +12,7 @@
     
     <TabbedPage.Children>
         <pages:TrendingPage Icon="icon_trending.png" Title="Trending"/>
-        <pages:WorldPage Icon="icon_world.png" Title="World"/>
+        <pages:SearchPage Icon="icon_search.png" Title="Search"/>
         <pages:TechnologyPage Icon="icon_technology.png" Title="Technology"/>
         <pages:FavoritesPage Icon="icon_favorites.png" Title="Favorite"/>
     </TabbedPage.Children>

@@ -92,6 +92,7 @@
     <Compile Include="DependencyServices\FileHelper.cs" />
     <Compile Include="DependencyServices\PlatformLabel.cs" />
     <Compile Include="DependencyServices\TextSpeecher.cs" />
+    <Compile Include="Helpers\ToastHelper.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <None Include="Entitlements.plist" />
@@ -173,5 +174,8 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\icon_favorites.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\icon_search.png" />
   </ItemGroup>
 </Project>

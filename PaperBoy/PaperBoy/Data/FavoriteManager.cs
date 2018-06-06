@@ -1,4 +1,4 @@
-﻿#define OFFLINE_SYNC_ENABLED
+﻿//#define OFFLINE_SYNC_ENABLED
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;

@@ -104,7 +104,7 @@ namespace PaperBoy.UWP
 
         private void OnNotificationRecived(PushNotificationChannel sender, PushNotificationReceivedEventArgs args)
         {
-           // Helpers.ToastHelper.ProcessNotification(args);
+            Helpers.ToastHelper.ProcessNotification(args);
         }
 
         /// <summary>

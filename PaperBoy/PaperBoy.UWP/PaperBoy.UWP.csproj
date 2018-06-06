@@ -114,6 +114,7 @@
     <Content Include="Assets\pb_toastlogo.png" />
     <Content Include="icon_favorites.png" />
     <Content Include="icon_refresh.png" />
+    <Content Include="icon_search.png" />
     <Content Include="icon_settings.png" />
     <Content Include="icon_technology.png" />
     <Content Include="icon_trending.png" />

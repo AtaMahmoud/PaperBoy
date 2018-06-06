@@ -23,7 +23,7 @@ namespace PaperBoy.UWP.Helpers
                         "<image placement=\"appLogoOverride\" hint-crop=\"circle\" src=\"ms-appx:///Assets/pb_toastlogo.png\"/>" +
                             "<text>Welcome to Paperboy!</text>" +
                             "<text>The coolest Xamarin Forms news reader in the Universe!</text>" +
-                            "<text placement=\"attribution\">WintellectNOW</text>" +
+                            "<text placement=\"attribution\">Ata Mahmoud</text>" +
                         "</binding>" +
                     "</visual>" +
                 "</toast>";
@@ -83,11 +83,11 @@ namespace PaperBoy.UWP.Helpers
         {
             try
             {
-                JObject message=new JObject();
+                JObject message = new JObject();
 
                 string title = message["message"].ToString();
 
-                ToastHelper.SendNotificationToast("New Favorite added",title);
+                SendNotificationToast("New Favorite added", title);
             }
             catch (Exception e)
             {

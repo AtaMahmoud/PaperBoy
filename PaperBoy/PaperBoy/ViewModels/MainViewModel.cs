@@ -1,11 +1,7 @@
 ﻿using PaperBoy.Common;
 using PaperBoy.Models.News;
 using PaperBoy.Models;
-using PaperBoy.Models.Trending;
 using PaperBoy.Helpers;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using PaperBoy.Interfaces;
@@ -16,11 +12,11 @@ namespace PaperBoy.ViewModels
 {
     public class MainViewModel:ObservableBase
     {
-        private ObservableCollection<NewsInformation> _worldNews;
-        public ObservableCollection<NewsInformation> WorldNews
+        private ObservableCollection<NewsInformation> _searchResult;
+        public ObservableCollection<NewsInformation> SearchResult
         {
-            get => _worldNews;
-            set { SetProperty(ref this._worldNews, value); }
+            get => _searchResult;
+            set { SetProperty(ref this._searchResult, value); }
         }
 
         private ObservableCollection<NewsInformation> _technologyNews;
@@ -42,6 +38,14 @@ namespace PaperBoy.ViewModels
         {
             get => _currentUser;
             set { SetProperty(ref this._currentUser,value); }
+        }
+
+        private string _searchQuery;
+
+        public string SearchQuery
+        {
+            get => _searchQuery;
+            set => SetProperty(ref _searchQuery, value);
         }
 
         private bool _isBusy;
@@ -80,7 +84,7 @@ namespace PaperBoy.ViewModels
         }
         public MainViewModel()
         {
-            WorldNews = new ObservableCollection<NewsInformation>();
+            SearchResult = new ObservableCollection<NewsInformation>();
             TechnologyNews = new ObservableCollection<NewsInformation>();
             TrendingNews = new ObservableCollection<NewsInformation>();
 
@@ -97,7 +101,6 @@ namespace PaperBoy.ViewModels
             this.IsBusy = true;
 
             await RefreshTrendingNewsAsync();
-            await RefreshWorldNewsAsync();
             await RefreshTechnologyNewsAsync();
 
             this.IsBusy = false;
@@ -142,16 +145,21 @@ namespace PaperBoy.ViewModels
             }
         }
 
-        public async Task RefreshWorldNewsAsync()
+        public async Task RefreshSearchResultAsync()
         {
-            WorldNews.Clear();
+            this.IsBusy = true;
 
-            var worldNews = await NewsHelper.GetByCategoryAsync(NewsCategoryType.World);
+            SearchResult.Clear();
 
-            foreach (var item in worldNews)
+            string query = this.SearchQuery;
+            var sewarchResult = await NewsHelper.GetSearchAsync(query);
+
+            foreach (var item in SearchResult)
             {
-                WorldNews.Add(item);
+                SearchResult.Add(item);
             }
+
+            this.IsBusy = false;
         }
     }
 }

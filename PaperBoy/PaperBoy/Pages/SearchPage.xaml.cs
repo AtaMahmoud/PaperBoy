@@ -12,20 +12,33 @@ using Xamarin.Forms.Xaml;
 namespace PaperBoy.Pages
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class WorldPage : ContentPage
+	public partial class SearchPage : ContentPage
 	{
-		public WorldPage ()
+		public SearchPage ()
 		{
-			InitializeComponent ();
-		}
+		    InitializeComponent();
+        }
         protected override void OnAppearing()
         {
-            this.BindingContext = App.viewModel;
+            LoadDefaultSearchResults();
             base.OnAppearing();
         }
-        public void OnItemTapped(object sender, ItemTappedEventArgs e)
+
+	    private async void LoadDefaultSearchResults()
+	    {
+	        this.BindingContext = App.viewModel;
+
+	        if (string.IsNullOrWhiteSpace(App.viewModel.SearchQuery))
+	            App.viewModel.SearchQuery = "Microsoft";
+
+	        await App.viewModel.RefreshSearchResultAsync();
+
+	    }
+
+	    public void OnItemTapped(object sender, ItemTappedEventArgs e)
         {
             new NavigateToDetailCommand().Execute(e.Item as NewsInformation);
         }
+
     }
 }
