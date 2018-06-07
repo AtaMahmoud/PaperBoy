@@ -13,9 +13,11 @@
             <command:RefreshNewsCommand x:Key="RefreshNewsCommand"/>
             <command:SpeakCommand x:Key="SpeakCommand"/>
             <command:ToggleFavoriteCommand x:Key="ToggleFavoriteCommand"/>
+            <command:NavigateToDetailCommand x:Key="NavigateToDetailCommand"/>
             
             <converters:LableFontWeightConverter x:Key="LableFontWeightConverter"/>
             <converters:AgoLabelConverter x:Key="AgoLabelConverter"/>
+            <converters:SelectedItemConverter x:Key="SelectedItemConverter"/>
             
             <Color x:Key="ListTextColor">#000000</Color>
 

@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:behaviors="clr-namespace:PaperBoy.Behaviors;assembly=PaperBoy"
              x:Class="PaperBoy.Pages.TechnologyPage">
     <ContentPage.ToolbarItems>
         <ToolbarItem Icon="icon_refresh.png" Command="{StaticResource RefreshNewsCommand}" CommandParameter="Technology" Text="Refresh" Order="Primary"/>
@@ -8,11 +9,18 @@
     
     <ListView
         x:Name="newsListView"
-        ItemTapped="OnItemTapped"
         HasUnevenRows="True"
         IsRefreshing="{Binding IsBusy}"
         ItemsSource="{Binding TechnologyNews}"
         Margin="20">
+
+        <ListView.Behaviors>
+            <behaviors:EventToCommandBehavior 
+                EventName="ItemSelected" 
+                Command="{StaticResource NavigateToDetailCommand}"
+                Converter="{StaticResource SelectedItemConverter}" />
+        </ListView.Behaviors>
+
         <ListView.ItemTemplate>
             <DataTemplate>
                 <ViewCell>
