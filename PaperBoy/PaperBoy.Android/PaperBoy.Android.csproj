@@ -91,6 +91,7 @@
     <Compile Include="Helpers\ToastHelper.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Renders\AccentColorButtonRenderer.cs" />
+    <Compile Include="Renders\CircleImageRender.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SplashActivity.cs" />

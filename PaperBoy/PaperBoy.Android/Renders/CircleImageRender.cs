@@ -1,4 +1,5 @@
 ﻿using System;
+using Android.Content;
 using Android.Graphics;
 using Android.OS;
 using Android.Views;
@@ -12,6 +13,10 @@ namespace PaperBoy.Droid.Renders
 {
     public class CircleImageRender:ImageRenderer
     {
+        public CircleImageRender(Context context) : base(context)
+        {
+        }
+
         protected override void OnElementChanged(ElementChangedEventArgs<Image> e)
         {
             base.OnElementChanged(e);

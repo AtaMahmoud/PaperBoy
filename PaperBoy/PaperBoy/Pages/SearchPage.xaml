@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:behaviors="clr-namespace:PaperBoy.Behaviors;assembly=PaperBoy"
              x:Class="PaperBoy.Pages.SearchPage">
     <ContentPage.ToolbarItems>
         <ToolbarItem Icon="icon_refresh.png" Command="{StaticResource RefreshNewsCommand}" CommandParameter="Search" Priority="0" Text="Refresh" Order="Primary"/>
@@ -21,7 +22,9 @@
         </Label>
 
         <SearchBar SearchCommand="{StaticResource RefreshNewsCommand}" SearchCommandParameter="Search" Text="{Binding SearchQuery}" Grid.Row="1" Placeholder="Enter a search query">
-
+            <SearchBar.Behaviors>
+                <behaviors:AlphNumericOnlyBehavior/>
+            </SearchBar.Behaviors>
         </SearchBar>
         <ListView
         x:Name="newsListView"
