@@ -87,6 +87,7 @@
     <Compile Include="DependencyServices\PlatformLabel.cs" />
     <Compile Include="DependencyServices\TextSpeecher.cs" />
     <Compile Include="Effects\FontEffect.cs" />
+    <Compile Include="Effects\HyperlinkEffect.cs" />
     <Compile Include="GsmService.cs" />
     <Compile Include="Helpers\ColorHelper.cs" />
     <Compile Include="Helpers\ToastHelper.cs" />
