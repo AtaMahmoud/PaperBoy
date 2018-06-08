@@ -109,6 +109,9 @@
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
+    <Content Include="Assets\Fonts\ARISTA LIGHT.TTF" />
+    <Content Include="Assets\Fonts\ARISTA.TTF" />
+    <Content Include="Assets\Fonts\Lobster-Regular.ttf" />
     <None Include="PaperBoy.UWP_StoreKey.pfx" />
     <None Include="PaperBoy.UWP_TemporaryKey.pfx" />
   </ItemGroup>
@@ -199,9 +202,7 @@
       <Name>PaperBoy</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="NewFolder1\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

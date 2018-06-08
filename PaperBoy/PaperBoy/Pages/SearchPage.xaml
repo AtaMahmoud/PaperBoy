@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:behaviors="clr-namespace:PaperBoy.Behaviors;assembly=PaperBoy"
+             xmlns:effects="clr-namespace:PaperBoy.Effects;assembly=PaperBoy"
              x:Class="PaperBoy.Pages.SearchPage">
     <ContentPage.ToolbarItems>
         <ToolbarItem Icon="icon_refresh.png" Command="{StaticResource RefreshNewsCommand}" CommandParameter="Search" Priority="0" Text="Refresh" Order="Primary"/>
@@ -14,10 +15,13 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Label FontSize="Medium"  Text="Enter a search query: " Margin="5">
+        <Label FontSize="Medium"  Text="Enter a search query: " Margin="5" effects:CustomFontEffect.FontFileName="Neon">
             <Label.FontFamily>
-                <OnPlatform x:TypeArguments="x:String" iOS="Lobster-Regular" Android="Neon"
-                            WinPhone="/Assets/Fonts/ARISTA.ttf#[z] ARISTA"/>
+                <OnPlatform x:TypeArguments="x:String">
+                    <OnPlatform.iOS>Lobster-Regular</OnPlatform.iOS>
+                    <OnPlatform.Android>Neon</OnPlatform.Android>
+                    <OnPlatform.WinPhone>/Assets/Fonts/ARISTA.ttf#[z] ARISTA</OnPlatform.WinPhone>
+                </OnPlatform>
             </Label.FontFamily>
         </Label>
 

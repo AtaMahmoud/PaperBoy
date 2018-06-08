@@ -86,6 +86,7 @@
     <Compile Include="DependencyServices\FileHelper.cs" />
     <Compile Include="DependencyServices\PlatformLabel.cs" />
     <Compile Include="DependencyServices\TextSpeecher.cs" />
+    <Compile Include="Effects\FontEffect.cs" />
     <Compile Include="GsmService.cs" />
     <Compile Include="Helpers\ColorHelper.cs" />
     <Compile Include="Helpers\ToastHelper.cs" />
@@ -97,6 +98,7 @@
     <Compile Include="SplashActivity.cs" />
   </ItemGroup>
   <ItemGroup>
+    <AndroidAsset Include="Assets\Fonts\Neon.ttf" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
   </ItemGroup>
