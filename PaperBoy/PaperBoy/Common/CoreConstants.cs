@@ -8,11 +8,11 @@ namespace PaperBoy.Common
     {
         public static string NewsSearchApiKey
         {
-            get => "c66dc07332124e4a878222b61175d2a3";
+            get => "Your API Key";
         }
 
-        public static string ApplicationURL = @"https://paperboynewsapp.azurewebsites.net";
+        public static string ApplicationURL = @"Your Application URL";
 
-        public static string GcmRemoteId = "1038401497037";
+        public static string GcmRemoteId = "Your GCM ID";
     }
 }
